@@ -1,0 +1,87 @@
+nav {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;               
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent; 
+}
+
+
+.nav-button {
+  width: 120px;         
+  padding: 12px 0;       
+  position: relative;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  border: 0;
+  cursor: pointer;
+  border-radius: 1rem;  
+  text-align: center;
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.05); 
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover .wave {
+  top: -90px;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.wave {
+  width: 120px;         
+  height: 120px;
+  background-color: #27a9ff; 
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 0;
+  top: -40px;           
+  transition: 0.5s ease;
+  border-radius: 0;
+}
+
+.wave::before, .nav-button .wave::after {
+  width: 250%;
+  height: 250%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.wave::before {
+  border-radius: 45%;
+  background-color: #0581b3;
+  animation: waveAnimation 5s linear infinite;
+}
+
+.wave::after {
+  border-radius: 40%;
+  background-color: rgba(20, 20, 20, 0.4);
+  animation: waveAnimation 9s linear infinite;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
